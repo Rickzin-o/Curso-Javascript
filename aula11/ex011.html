@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeroporto</title>
+</head>
+<body>
+    <h1>Check-in de passaporte</h1>
+    De que país você é? <input type="text" id="country">
+    <button onclick="checarNacionalidade()">Checar</button>
+    <div id="res"></div>
+
+    <script>
+        function checarNacionalidade() {
+            var país = document.querySelector("input#country").value
+            var result = document.querySelector("div#res")
+            
+            result.innerHTML = `<p>Você veio do país <strong>${país}</strong>...</p>`
+            if (país.toLowerCase() == "brasil") {
+                result.innerHTML += "<p>Você é brasileiro!</p>"
+            } else {
+                result.innerHTML += "<p>Você é estrangeiro!</p>"
+            }
+        }
+    </script>
+</body>
+</html>
